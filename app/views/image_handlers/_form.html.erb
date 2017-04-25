@@ -1,0 +1,19 @@
+<%= form_for(image_handler) do |f| %>
+  <%= f.file_field :image_one %>
+  <%= f.file_field :image_two %>
+  <% if image_handler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(image_handler.errors.count, "error") %> prohibited this image_handler from being saved:</h2>
+
+      <ul>
+      <% image_handler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
