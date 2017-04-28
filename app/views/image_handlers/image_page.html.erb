@@ -1,0 +1,11 @@
+<%= link_to 'Create Another Avatar Picture', root_path %>
+
+<div class="col-sm-12 text-center">
+  <ul class="list-group text-left col-sm-6 offset-sm-3">
+    <li class="list-group-item"><h3>1. Right click on the image.</h3></li> 
+    <li class="list-group-item"><h3>2. Select 'Save Image As..' to save this to your computer.</h3></li>
+  </ul>
+  <br>
+  <br>
+  <%= image_tag @uploader.url %>
+</div>

@@ -23,12 +23,12 @@ class ImageHandlersController < ApplicationController
   end
 
   def create
-    image = MiniMagick::Image.open(params[:image_handler][:image_one].tempfile.path)
+    image = MiniMagick::Image.open('public/drumpf.png')
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
     image_two.format "png"
     image.resize "500x500"
-    image_two.resize "500X500"
+    image_two.resize "500x500"
 
     image_two.combine_options do |mogrify|
         mogrify.alpha 'on'
@@ -40,12 +40,23 @@ class ImageHandlersController < ApplicationController
       comp.compose "Over"
       comp.geometry "+0+0" # copy second_image onto first_image from (20, 20)
     end
-
+    # result.rename "drumping.png"
     result.format "png"
-    result.write "public/uploads/test.png"
 
-    raise 'it'
+    @uploader = ProfilePictureUploader.new
+
+    @uploader.store!(result)
+    @uploader.retrieve_from_store!('something.jpg')
+
+    respond_to do |format|
+      format.html{ redirect_to image_page_path }
+    end
   end
+
+  def image_page
+    @uploader = ProfilePictureUploader.new 
+    @uploader.retrieve_from_store!('something.jpg')
+  end 
 
   def update
     respond_to do |format|
