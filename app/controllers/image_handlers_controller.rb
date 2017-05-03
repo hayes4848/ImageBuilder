@@ -22,13 +22,46 @@ class ImageHandlersController < ApplicationController
   def edit
   end
 
+  def resize_and_crop(image, w, h)
+      w_original =image[:width]
+      h_original =image[:height]
+
+      if (w_original*h != h_original * w)
+        if w_original*h >= h_original * w
+          # long width
+          h_original_new = h_original
+          w_original_new = h_original_new * (w.to_f / h)
+        elsif w_original*h <= h_original * w
+          # long height
+          w_original_new = w_original
+          h_original_new = w_original_new * (h.to_f / w)
+        end
+      else
+         # good proportions
+         h_original_new = h_original
+         w_original_new = w_original
+
+      end
+
+      if w_original_new != w_original || h_original_new != h_original
+        x = ((w_original - w_original_new)/2).round
+        y = ((h_original - h_original_new)/2).round
+        image.crop ("#{w_original_new}x#{h_original_new}+#{x}+#{y}")
+      end
+
+      #
+      image.resize("#{w}x#{h}")
+      return image
+  end
+
+
   def create
     image = MiniMagick::Image.open('public/drumpf.png')
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
     image_two.format "png"
     image.resize "500x500"
-    image_two.resize "500x500"
+    image_two = resize_and_crop(image_two, 500, 500)
 
     image_two.combine_options do |mogrify|
         mogrify.alpha 'on'
@@ -36,17 +69,16 @@ class ImageHandlersController < ApplicationController
         mogrify.evaluate 'set', '35%'
     end
 
+
     result = image.composite(image_two) do |comp|
       comp.compose "Over"
       comp.geometry "+0+0" # copy second_image onto first_image from (20, 20)
     end
-    # result.rename "drumping.png"
     result.format "png"
 
     @uploader = ProfilePictureUploader.new
 
     @uploader.store!(result)
-    @uploader.retrieve_from_store!('something.jpg')
 
     respond_to do |format|
       format.html{ redirect_to image_page_path }
