@@ -5,9 +5,9 @@ require_relative 'boot'
 
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie" no need
-require "rails/test_unit/railtie" no need
-require "sprockets/railtie" no need
+# require "active_resource/railtie" 
+require "rails/test_unit/railtie"
+require "sprockets/railtie" 
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
