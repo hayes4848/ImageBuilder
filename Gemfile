@@ -26,6 +26,7 @@ gem "mini_magick"
 gem "paperclip", "~> 5.0.0"
 gem 'carrierwave', '~> 1.0'
 gem "responders"
+gem 'remotipart', '~> 1.2'
 
 
 group :development, :test do
