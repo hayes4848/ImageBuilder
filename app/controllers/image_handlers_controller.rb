@@ -1,5 +1,6 @@
 class ImageHandlersController < ApplicationController
   before_action :set_image_handler, only: [:show, :edit, :update, :destroy]
+  respond_to :js
 
   # GET /image_handlers
   # GET /image_handlers.json
@@ -55,7 +56,7 @@ class ImageHandlersController < ApplicationController
   end
 
 
-  def create
+  def process_that_ish
     image = MiniMagick::Image.open('public/drumpf.png')
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
@@ -80,9 +81,15 @@ class ImageHandlersController < ApplicationController
 
     @uploader.store!(result)
 
+    @uploaded = ProfilePictureUploader.new 
+    @uploaded.retrieve_from_store!('something.jpg')
+
     respond_to do |format|
       format.html{ redirect_to image_page_path }
+      format.js
     end
+
+    # respond_to {|format| format.js}
   end
 
   def image_page
@@ -90,25 +97,6 @@ class ImageHandlersController < ApplicationController
     @uploader.retrieve_from_store!('something.jpg')
   end 
 
-  def update
-    respond_to do |format|
-      if @image_handler.update(image_handler_params)
-        format.html { redirect_to @image_handler, notice: 'Image handler was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image_handler }
-      else
-        format.html { render :edit }
-        format.json { render json: @image_handler.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @image_handler.destroy
-    respond_to do |format|
-      format.html { redirect_to image_handlers_url, notice: 'Image handler was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

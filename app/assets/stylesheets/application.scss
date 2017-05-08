@@ -4,3 +4,12 @@
   max-width: 300px;
   max-height: 300px;
 }
+
+.default-profile {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  margin-left: 20%;
+}

@@ -1,17 +1,6 @@
-<%= form_for(image_handler) do |f| %>
+<%= form_for url: process_that_ish_path, remote: true, authenticity_token: true do |f| %>
   <%= f.file_field :image_two, id: 'files' %>
   <img id="image" />
-  <% if image_handler.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(image_handler.errors.count, "error") %> prohibited this image_handler from being saved:</h2>
-
-      <ul>
-      <% image_handler.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <br>
   <br>
   <br>

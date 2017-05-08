@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use Capistrano for deployment
@@ -24,6 +25,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem "mini_magick"
 gem "paperclip", "~> 5.0.0"
 gem 'carrierwave', '~> 1.0'
+gem "responders"
 
 
 group :development, :test do
