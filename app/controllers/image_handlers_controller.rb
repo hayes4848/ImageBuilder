@@ -1,6 +1,6 @@
 class ImageHandlersController < ApplicationController
   before_action :set_image_handler, only: [:show, :edit, :update, :destroy]
-  respond_to :js
+  # respond_to :js
 
   # GET /image_handlers
   # GET /image_handlers.json
