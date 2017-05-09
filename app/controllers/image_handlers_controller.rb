@@ -61,8 +61,8 @@ class ImageHandlersController < ApplicationController
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
     image_two.format "png"
-    image.resize "500x500"
-    image_two = resize_and_crop(image_two, 500, 500)
+    image.resize "300x300"
+    image_two = resize_and_crop(image_two, 300, 300)
 
     image_two.combine_options do |mogrify|
         mogrify.alpha 'on'
@@ -92,10 +92,18 @@ class ImageHandlersController < ApplicationController
     # respond_to {|format| format.js}
   end
 
-  def image_page
-    @uploader = ProfilePictureUploader.new 
-    @uploader.retrieve_from_store!('something.jpg')
-  end 
+  def download_file 
+    @uploaded = ProfilePictureUploader.new 
+    @uploaded.retrieve_from_store!('something.jpg')
+    image_path = File.join(Rails.root, "public", "images")
+    send_file(File.join(image_path, @uploaded.url))
+    # send_file Rails.root + @uploaded.url
+  end
+
+  # def image_page
+  #   @uploader = ProfilePictureUploader.new 
+  #   @uploader.retrieve_from_store!('something.jpg')
+  # end 
 
 
   private

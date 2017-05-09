@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 text-center">
+  <div class="col-sm-5 text-center">
     <p id="notice"><%= notice %></p>
     <h3>Trumpify your Profile Picture</h3>
     <h4>Add this awesome Filter to your profile picture now.</h4>
@@ -12,7 +12,11 @@
     <%= render 'form', image_handler: @image_handler %>
   </div>
 
-  <div id="processedImage" class="col-sm-6">
+  <div class="col-sm-2">
+    <%= image_tag 'arrow-right-two.png', class: 'arrow-image' %>
+  </div>
+  
+  <div id="processedImage" class="col-sm-5">
     <%= image_tag 'profile.png', class: 'default-profile' %>
   </div>
 </div>

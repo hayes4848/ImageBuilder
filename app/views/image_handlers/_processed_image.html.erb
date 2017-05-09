@@ -1,1 +1,6 @@
-<%= image_tag uploaded.url %>
+<div class="col-sm-12">
+<%= image_tag uploaded.url, class: 'uploaded-image' %>
+</div>
+<div class="row col-sm-12 text-center">  
+  <%= link_to "Download Image", uploaded.url,class: 'btn btn-primary download-link', download: 'avatar' %>
+</div>
