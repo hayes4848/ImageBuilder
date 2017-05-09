@@ -1,4 +1,4 @@
-<%= form_for image_handler, url: process_that_ish_path, remote: true, authenticity_token: true do |f| %>
+<%= form_for image_handler, url: process_that_ish_path, remote: true, format: "js", authenticity_token: true do |f| %>
   <%= f.file_field :image_two, id: 'files' %>
   <img id="image" />
   <br>
