@@ -85,7 +85,7 @@ class ImageHandlersController < ApplicationController
     @uploaded.retrieve_from_store!('something.jpg')
 
     respond_to do |format|
-      format.html{ render 'processed_image' }
+      format.html{ redirect_to image_page_path }
       format.js
     end
 
