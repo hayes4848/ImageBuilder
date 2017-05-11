@@ -12,9 +12,10 @@
     <%= render 'form', image_handler: @image_handler %>
   </div>
 
-  <div class="col-sm-2">
+  <div class="col-sm-2" id="arrow-container">
     <%= image_tag 'arrow-right-two.png', class: 'arrow-image' %>
   </div>
+
   
   <div id="processedImage" class="col-sm-5">
     <%= image_tag 'profile.png', class: 'default-profile' %>
