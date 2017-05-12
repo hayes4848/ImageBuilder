@@ -11116,3 +11116,10 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   width: 40%;
   margin-top: 10px;
 }
+
+/* line 31, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.bar {
+  height: 10px;
+  top: 40%;
+  display: none;
+}
