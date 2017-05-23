@@ -1,4 +1,5 @@
 <%= form_for image_handler, url: process_that_ish_path, id: "fileupload" do |f| %>
+  <%= hidden_field_tag :filter %>
   <%= f.file_field :image_two, id: 'files' %>
   <img id="image" />
   <br>

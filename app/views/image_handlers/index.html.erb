@@ -1,23 +1,33 @@
 <div class="row">
-  <div class="col-sm-5 text-center">
+  <div class="col-sm-12 text-center">
     <p id="notice"><%= notice %></p>
-    <h3>Trumpify your Profile Picture</h3>
-    <h4>Add this awesome Filter to your profile picture now.</h4>
-    <%= image_tag 'drumpf.png', class: 'filter-overlay' %>
+    <h3>Create your Pluralsight Profile Picture</h3>
+    <h4>1. Choose your Filter.</h4>
+    <div class="col-sm-12">
+      <select id="filterSelect">
+        <option class=""></option>
+        <option class="filter1">Image 1</option>
+        <option class="filter2">Image 2</option>
+      </select>
+    </div>
+     <%= image_tag 'profile.png', class: 'default-profile' %>
+     <%= image_tag 'filter1_example.png', class: 'filter1_example' %>
+     <%= image_tag 'filter2_example.png', class: 'filter2_example' %>
     <br>
     <br>
-    <h3>Click below to upload your Profile Picture.</h3>
+    <h3>2. Upload your image. </h3>
     <br>
     <br>
-    <%= render 'form', image_handler: @image_handler %>
+    <div class="col-sm-12 text-center">
+      <%= render 'form', image_handler: @image_handler %>
+    </div>
   </div>
 
-  <div class="col-sm-2" id="arrow-container">
-    <%= image_tag 'arrow-right-two.png', class: 'arrow-image' %>
+  <div class="col-sm-12 text-center" id="arrow-container">
+    <%#= image_tag 'arrow-right-two.png', class: 'arrow-image' %>
   </div>
 
   
-  <div id="processedImage" class="col-sm-5">
-    <%= image_tag 'profile.png', class: 'default-profile' %>
+  <div id="processedImage" class="col-sm-12 text-center">
   </div>
 </div>

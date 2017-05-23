@@ -57,21 +57,21 @@ class ImageHandlersController < ApplicationController
 
 
   def process_that_ish
-    image = MiniMagick::Image.open('public/drumpf.png')
+    image = MiniMagick::Image.open("public/#{params[:filter]}.png")
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
     image_two.format "png"
     image.resize "300x300"
     image_two = resize_and_crop(image_two, 300, 300)
 
-    image_two.combine_options do |mogrify|
-        mogrify.alpha 'on'
-        mogrify.channel 'a'
-        mogrify.evaluate 'set', '35%'
-    end
+    # image_two.combine_options do |mogrify|
+    #     mogrify.alpha 'on'
+    #     mogrify.channel 'a'
+    #     mogrify.evaluate 'set', '35%'
+    # end
 
 
-    result = image.composite(image_two) do |comp|
+    result = image_two.composite(image) do |comp|
       comp.compose "Over"
       comp.geometry "+0+0" # copy second_image onto first_image from (20, 20)
     end
