@@ -1,1 +1,1 @@
-$('#processedImage').html("<%= j render 'processed_image' %>");
+$('#processedImage').html("<%= j render 'processed_image', locals: {file_url: @file_url} %>");

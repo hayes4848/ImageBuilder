@@ -81,8 +81,8 @@ class ImageHandlersController < ApplicationController
 
     @uploader.store!(result)
 
-    @uploaded = ProfilePictureUploader.new 
-    @uploaded.retrieve_from_store!('something.jpg')
+
+    @file_url = @uploader.url
 
     respond_to do |format|
       # format.html{ redirect_to image_page_path }
@@ -99,11 +99,6 @@ class ImageHandlersController < ApplicationController
     send_file(File.join(image_path, @uploaded.url))
     # send_file Rails.root + @uploaded.url
   end
-
-  # def image_page
-  #   @uploader = ProfilePictureUploader.new 
-  #   @uploader.retrieve_from_store!('something.jpg')
-  # end 
 
 
   private

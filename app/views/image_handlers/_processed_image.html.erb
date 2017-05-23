@@ -1,6 +1,6 @@
 <div class="col-sm-12">
-<%= image_tag '/uploads/something.jpg', class: 'uploaded-image' %>
+<%= image_tag "#{@file_url}", class: 'uploaded-image' %>
 </div>
 <div class="row col-sm-12 text-center">  
-  <%= link_to "Download Image", "/uploads/something.jpg",class: 'btn btn-primary download-link', download: 'avatar' %>
+  <%= link_to "Download Image", "#{@file_url}",class: 'btn btn-primary download-link', download: 'avatar' %>
 </div>
