@@ -84,13 +84,13 @@ class ImageHandlersController < ApplicationController
     # respond_to {|format| format.js}
   end
 
-  def download_file 
-    @uploaded = ProfilePictureUploader.new 
-    @uploaded.retrieve_from_store!('something.jpg')
-    image_path = File.join(Rails.root, "public", "images")
-    send_file(File.join(image_path, @uploaded.url))
-    # send_file Rails.root + @uploaded.url
-  end
+  # def download_file 
+  #   @uploaded = ProfilePictureUploader.new 
+  #   @uploaded.retrieve_from_store!('something.jpg')
+  #   image_path = File.join(Rails.root, "public", "images")
+  #   send_file(File.join(image_path, @uploaded.url))
+  #   # send_file Rails.root + @uploaded.url
+  # end
 
 
   private

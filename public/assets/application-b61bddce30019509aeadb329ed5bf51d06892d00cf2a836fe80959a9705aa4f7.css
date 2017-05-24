@@ -11105,16 +11105,29 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   width: 300px;
 }
 
-/* line 37, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 23, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .download-link {
   margin-left: 30%;
   width: 40%;
   margin-top: 10px;
 }
 
-/* line 42, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 28, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .bar {
   height: 10px;
   top: 40%;
   display: none;
+}
+
+/* line 33, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.uploaded-image {
+  width: 300px;
+  height: 300px;
+}
+
+/* line 37, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.bottom-spacer {
+  width: 100%;
+  height: 5em;
+  clear: both;
 }

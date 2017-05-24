@@ -19221,11 +19221,8 @@ var spinner = new Spinner(opts);
       $('.arrow-image').hide();
     },
     success: function(data, status) {
-      $('#processedImage').html(
-        '<div class="col-sm-12"><img class="uploaded-image" src="/uploads/something.jpg" alt="Something" /></div><div class="row col-sm-12 text-center"><a href="/uploads/something.jpg" class="btn btn-primary download-link" download="avatar" >Download Image</a></div>'
-        );
       spinner.stop();
-      $('.arrow-image').show();
+      return data;
     }
   });
 
