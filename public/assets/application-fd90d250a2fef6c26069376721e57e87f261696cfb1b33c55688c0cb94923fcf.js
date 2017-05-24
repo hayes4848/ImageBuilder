@@ -19228,6 +19228,19 @@ var spinner = new Spinner(opts);
       $('.arrow-image').show();
     }
   });
+
+  $(document).on('change', '#filterSelect', function(){
+    if($('#filterSelect option:selected').text() == 'Image 1') {
+      $('.filter1_example').show();
+      $('.filter2_example').hide();
+      $('#filter').val('filter1');
+    }else {
+      $('.filter1_example').hide();
+      $('.filter2_example').show();
+      $('#filter').val('filter2');
+    }
+    $('.default-profile').hide();
+  })
 })
 ;
 // This is a manifest file that'll be compiled into application.js, which will include all the files

@@ -11086,38 +11086,33 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 
 /* line 8, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.filter1_example {
+  display: none;
+  height: 300px;
+  width: 300px;
+}
+
+/* line 13, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.filter2_example {
+  display: none;
+  height: 300px;
+  width: 300px;
+}
+
+/* line 19, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .default-profile {
   height: 300px;
   width: 300px;
-  position: absolute;
-  top: 40%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin-left: 20%;
 }
 
-/* line 16, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
-.uploaded-image {
-  margin-left: 20%;
-  margin-top: 5em;
-}
-
-/* line 21, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
-.arrow-image {
-  position: absolute;
-  top: 40%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-/* line 26, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 37, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .download-link {
   margin-left: 30%;
   width: 40%;
   margin-top: 10px;
 }
 
-/* line 31, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 42, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .bar {
   height: 10px;
   top: 40%;
