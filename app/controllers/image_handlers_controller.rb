@@ -2,19 +2,11 @@ class ImageHandlersController < ApplicationController
   before_action :set_image_handler, only: [:show, :edit, :update, :destroy]
   # respond_to :js
 
-  # GET /image_handlers
-  # GET /image_handlers.json
   def index
     @image_handler = ImageHandler.new
     @image_handlers = ImageHandler.all
   end
 
-  # GET /image_handlers/1
-  # GET /image_handlers/1.json
-  def show
-  end
-
-  # GET /image_handlers/new
   def new
     @image_handler = ImageHandler.new
   end
@@ -61,8 +53,8 @@ class ImageHandlersController < ApplicationController
     image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image.format "png"
     image_two.format "png"
-    image.resize "300x300"
-    image_two = resize_and_crop(image_two, 300, 300)
+    image.resize "500x500"
+    image_two = resize_and_crop(image_two, 500, 500)
 
     # image_two.combine_options do |mogrify|
     #     mogrify.alpha 'on'
