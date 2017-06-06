@@ -47,34 +47,45 @@ class ImageHandlersController < ApplicationController
       return image
   end
 
+  def process_image_one(params)
+    filter = MiniMagick::Image.open("public/filter1.png")
+    uploaded_image = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
+    image_manipulation(filter, uploaded_image)
+  end
 
-  def process_that_ish
-    image = MiniMagick::Image.open("public/#{params[:filter]}.png")
-    image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
-    image.format "png"
+  def process_image_two(params)
+    filter = MiniMagick::Image.open("public/filter2.png")
+    uploaded_image = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
+    image_manipulation(filter, uploaded_image)
+  end
+
+  def image_manipulation(image_one, image_two)
+    # image_one = MiniMagick::Image.open("public/filter1.png")
+    # image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
+    image_one.format "png"
     image_two.format "png"
-    image.resize "500x500"
+    image_one.resize "500x500"
     image_two = resize_and_crop(image_two, 500, 500)
 
-    # image_two.combine_options do |mogrify|
-    #     mogrify.alpha 'on'
-    #     mogrify.channel 'a'
-    #     mogrify.evaluate 'set', '35%'
-    # end
 
-
-    result = image_two.composite(image) do |comp|
+    result = image_two.composite(image_one) do |comp|
       comp.compose "Over"
-      comp.geometry "+0+0" # copy second_image onto first_image from (20, 20)
+      comp.geometry "+0+0"
     end
     result.format "png"
+  end
 
-    @uploader = ProfilePictureUploader.new
+  def process_images
+    result_one = process_image_one(params)
+    result_two = process_image_two(params)
 
-    @uploader.store!(result)
+    @uploader_one = ProfilePictureUploader.new
+    @uploader_one.store!(result_one)
+    @file_one_url = @uploader_one.url
 
-
-    @file_url = @uploader.url
+    @uploader_two = ProfilePictureUploader.new
+    @uploader_two.store!(result_two)
+    @file_two_url = @uploader_two.url
 
     respond_to do |format|
       # format.html{ redirect_to image_page_path }
@@ -84,22 +95,11 @@ class ImageHandlersController < ApplicationController
     # respond_to {|format| format.js}
   end
 
-  # def download_file 
-  #   @uploaded = ProfilePictureUploader.new 
-  #   @uploaded.retrieve_from_store!('something.jpg')
-  #   image_path = File.join(Rails.root, "public", "images")
-  #   send_file(File.join(image_path, @uploaded.url))
-  #   # send_file Rails.root + @uploaded.url
-  # end
-
-
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_image_handler
       @image_handler = ImageHandler.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def image_handler_params
       params.fetch(:image_handler, {})
     end
