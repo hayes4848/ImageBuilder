@@ -4,19 +4,26 @@
     <%= image_tag "#{@file_one_url}", class: 'filter_example col-sm-12' %>
     <br>
     <br>
-    <div class="row text-center">
-      <%= link_to "Download Image", "#{@file_one_url}",class: 'btn btn-pluralsight download-link col-sm-4 offset-md-4', download: 'avatar' %>
-    </div>
+    <h3 class="row text-left">
+        <div class="col-sm-4 offset-sm-5">
+          <span class="">3. </span>
+          <%= link_to "Save", "#{@file_one_url}",class: 'btn btn-pluralsight download-link  text-center', download: 'avatar' %>
+          <span class=""> Image and upload to your social profile</span>
+        <!-- </div> -->
+      </h3>
   </div>
-  <div class="col-sm-2" id="arrow-container"></div>
   
   <div class="col-sm-12 text-center filter2">
     <%= image_tag "#{@file_two_url}", class: 'filter_example col-sm-12' %>
     <br>
     <br>
-    <div class="row text-center">
-      <%= link_to "Download Image", "#{@file_two_url}", class: 'btn btn-pluralsight download-link col-sm-4 offset-md-4', download: 'avatar' %>
-    </div>
+    <h3 class="row text-left">
+        <div class="col-sm-4 offset-sm-5">
+          <span class="">3. </span>
+          <%= link_to "Save", "#{@file_two_url}",class: 'btn btn-pluralsight download-link  text-center', download: 'avatar' %>
+          <span class=""> Image and upload to your social profile</span>
+        <!-- </div> -->
+      </h3>
   </div>
 
 </div>
