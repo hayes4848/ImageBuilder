@@ -41,15 +41,19 @@ var spinner = new Spinner(opts);
   });
 
   $(document).on('change', '#filterSelect', function(){
-    if($('#filterSelect option:selected').text() == 'Image 1') {
-      $('.filter1_example').show();
-      $('.filter2_example').hide();
-      $('#filter').val('filter1');
+    if($('#filterSelect option:selected').text() == 'Image the First') {
+      $('.filter1').show();
+      $('.filter2').hide();
+      // $('#filter').val('filter1');
+      console.log('this is the first');
     }else {
-      $('.filter1_example').hide();
-      $('.filter2_example').show();
-      $('#filter').val('filter2');
+      $('.filter1').hide();
+      $('.filter2').show();
+      // $('#filter').val('filter2');
+      console.log('this is the second');
     }
     $('.default-profile').hide();
   })
+
+
 })

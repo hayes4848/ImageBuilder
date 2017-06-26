@@ -1,10 +1,7 @@
 <%= form_for image_handler, url: process_images_path, id: "fileupload" do |f| %>
   <%= hidden_field_tag :filter %>
   <%#= f.file_field :image_two, id: 'files' %>
-  <label class="btn btn-primary btn-file">
-    Upload Image <input type="file" name="image_handler[image_two]" style="display: none;">
+  <label class="btn btn-pluralsight btn-file">
+    Upload <input type="file" name="image_handler[image_two]" style="display: none;">
   </label>
-  <br>
-  <br>
-
 <% end %>

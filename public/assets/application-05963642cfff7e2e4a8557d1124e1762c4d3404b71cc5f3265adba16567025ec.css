@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -11080,56 +11081,64 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 
 /* line 3, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+body {
+  background-color: black;
+  font-family: “Gotham SSm A”,“Gotham SSm B”,sans-serif;
+  color: white;
+  padding: 1em;
+  font-weight: 200;
+}
+
+/* line 11, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .filter-overlay {
   max-width: 300px;
   max-height: 300px;
 }
 
-/* line 8, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
-.filter1_example {
-  height: 500px;
-  width: 500px;
+/* line 16, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.filter_example {
+  height: 300px;
+  width: 300px;
 }
 
-/* line 13, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
-.filter2_example {
-  height: 500px;
-  width: 500px;
+/* line 20, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.filter2 {
+  display: none;
 }
 
-/* line 19, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 24, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .default-profile {
   height: 300px;
   width: 300px;
 }
 
-/* line 28, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 29, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .bar {
   height: 10px;
   top: 40%;
   display: none;
 }
 
-/* line 33, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 34, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .uploaded-image {
   width: 300px;
   height: 300px;
 }
 
-/* line 37, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 38, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .bottom-spacer {
   width: 100%;
   height: 5em;
   clear: both;
 }
 
-/* line 42, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 43, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .btn-file {
   position: relative;
   overflow: hidden;
 }
 
-/* line 46, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+/* line 47, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
 .btn-file input[type=file] {
   position: absolute;
   top: 0;
@@ -11144,4 +11153,29 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   background: white;
   cursor: inherit;
   display: block;
+}
+
+/* line 62, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.btn-pluralsight {
+  background-color: #F15B2A;
+  font-size: 20px;
+  color: white;
+  margin: 0px 15px 5px 15px;
+}
+/* line 67, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.btn-pluralsight :hover {
+  color: white;
+}
+/* line 70, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.btn-pluralsight :visited {
+  color: white;
+}
+/* line 73, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.btn-pluralsight :active {
+  color: white;
+}
+
+/* line 78, /Users/andyhayes/Sites/sandbox/ImageBuilder/app/assets/stylesheets/application.scss */
+.optional-text {
+  margin-top: -1em;
 }

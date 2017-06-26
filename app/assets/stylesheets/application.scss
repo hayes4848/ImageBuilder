@@ -1,30 +1,31 @@
 @import 'bootstrap';
 
+body{
+  background-color: black;
+  font-family: “Gotham SSm A”,“Gotham SSm B”,sans-serif;
+  color: white;
+  padding: 1em;
+  font-weight: 200;
+}
+
 .filter-overlay {
   max-width: 300px;
   max-height: 300px;
 }
 
-.filter1_example {
-  // display:none;
-  height: 500px;
-  width: 500px;
+.filter_example {
+  height: 300px;
+  width: 300px;
 }
-.filter2_example {
-  // display: none;
-  height: 500px;
-  width: 500px;
+.filter2 {
+  display: none;
 }
 
 .default-profile {
   height: 300px;
   width: 300px;
 }
-// .download-link {
-//   margin-left: 30%;
-//   width: 40%;
-//   margin-top: 10px;
-// }
+
 .bar {
   height: 10px;
   top: 40%;
@@ -57,4 +58,23 @@
     background: white;
     cursor: inherit;
     display: block;
+}
+.btn-pluralsight {
+  background-color: #F15B2A;
+  font-size: 20px;
+  color: white;
+  margin: 0px 15px 5px 15px;
+  :hover{
+    color: white;
+  }
+  :visited{
+    color: white;
+  }
+  :active{
+    color: white;
+  }
+}
+
+.optional-text {
+  margin-top: -1em;
 }

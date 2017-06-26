@@ -1,36 +1,46 @@
 <div class="row">
   <div class="col-sm-12 text-center">
-    <h3>Create your Pluralsight Profile Picture</h3>
+    <h3>Create your Pluralsight Profile Photo</h3>
     <br>
-    <h3>1. Upload your image. </h3>
+    <h3 class="row text-left">
+      <div class=" offset-sm-5 text-right">1.</div>
+      <div class=" text-left">
+        <%= render 'form', image_handler: @image_handler %>
+      </div>
+      <div class=" text-left"> your image </div>
+    </h3>
+    <p class="optional-text">(optimal size 1080x1080)</p> 
     <br>
-    <div class="col-sm-12 text-center">
-      <%= render 'form', image_handler: @image_handler %>
-    </div>
 
-    <p id="notice"><%= notice %></p>
   </div>
-  
 
 </div>
+
+<div class="row">
+  <h3 class=" offset-sm-5 text-right ">2. Pick your filter</h3>
+  <div class="text-center col-sm-12">
+    <select class="" id="filterSelect">
+      <option id="firstFilter">Image the First</option>
+      <option id="secondFilter">Image the Second</option>
+    </select>
+  </div>
+</div>
+<br>
+<br>
 <div id="processedImage">
   <div class="row">
-    <div class="col-sm-5 text-center">
-      <%= image_tag 'filter1.png', class: 'filter1_example col-sm-12' %>
+    <div class="col-sm-12 text-center">
+      <%= image_tag 'filter1.png', class: 'filter_example col-sm-12' %>
       <br>
       <br>
-      <div class="row text-center">
-        <%= link_to "Download Image", "#{@file_url}",class: 'btn btn-primary download-link col-sm-6 offset-md-3 disabled text-center', download: 'avatar' %>
-      </div>
+      <h3 class="row text-left">
+        <div class="col-sm-4 offset-sm-5">
+          <span class="">3. </span>
+          <%= link_to "Save", "#{@file_url}",class: 'btn btn-pluralsight download-link  text-center', download: 'avatar' %>
+          <span class=""> Image and upload to your social profile</span>
+        <!-- </div> -->
+      </h3>
     </div>
     <div class="col-sm-2" id="arrow-container"></div>
-    <div class="col-sm-5 text-center">
-      <%= image_tag 'filter2.png', class: 'filter2_example col-sm-12' %>
-      <br>
-      <br>
-      <div class="row text-center">
-        <%= link_to "Download Image", "#{@file_url}", class: 'btn btn-primary download-link disabled col-sm-6 offset-md-3', download: 'avatar' %>
-      </div>
-    </div>
   </div>
 </div>
