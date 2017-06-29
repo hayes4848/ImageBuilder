@@ -1,2 +1,2 @@
-class ImageHandler < ApplicationRecord
+class ImageHandler
 end

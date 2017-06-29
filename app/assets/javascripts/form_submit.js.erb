@@ -31,28 +31,20 @@ var spinner = new Spinner(opts);
     type: 'post',
     add: function(e, data){
       data.submit();
-      spinner.spin(target);
-      $('.arrow-image').hide();
     },
     success: function(data, status) {
-      spinner.stop();
       return data;
     }
   });
 
   $(document).on('change', '#filterSelect', function(){
-    if($('#filterSelect option:selected').text() == 'Image the First') {
+    if($('#filterSelect option:selected').text() == 'Gradient') {
       $('.filter1').show();
       $('.filter2').hide();
-      // $('#filter').val('filter1');
-      console.log('this is the first');
     }else {
       $('.filter1').hide();
       $('.filter2').show();
-      // $('#filter').val('filter2');
-      console.log('this is the second');
     }
-    $('.default-profile').hide();
   })
 
 

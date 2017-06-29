@@ -4,11 +4,11 @@ class ImageHandlersController < ApplicationController
 
   def index
     @image_handler = ImageHandler.new
-    @image_handlers = ImageHandler.all
+    # @image_handlers = ImageHandler.all
   end
 
   def new
-    @image_handler = ImageHandler.new
+    # @image_handler = ImageHandler.new
   end
 
   # GET /image_handlers/1/edit
@@ -60,8 +60,6 @@ class ImageHandlersController < ApplicationController
   end
 
   def image_manipulation(image_one, image_two)
-    # image_one = MiniMagick::Image.open("public/filter1.png")
-    # image_two = MiniMagick::Image.open(params[:image_handler][:image_two].tempfile.path)
     image_one.format "png"
     image_two.format "png"
     image_one.resize "500x500"
