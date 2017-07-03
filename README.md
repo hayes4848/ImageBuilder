@@ -31,4 +31,21 @@
   - edit line `passenger_ruby /home/deploy/.rvm/wrappers/ruby-2.3.0/ruby`
   - `sudo service nginx restart` to make sure changes take effect. 
 
-11.  
+11.  update ` /etc/nginx/sites-enabled/default` 
+```
+server {
+        listen 80;
+        listen [::]:80 ipv6only=on;
+
+        server_name mydomain.com;
+        passenger_enabled on;
+        rails_env    production;
+        root         /home/deploy/my_app_name/current/public;
+
+        # redirect server error pages to the static page /50x.html
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+}
+```
