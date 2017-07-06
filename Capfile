@@ -29,14 +29,14 @@ install_plugin Capistrano::SCM::Git
 # require "capistrano/rvm"
 # require "capistrano/rbenv"
 # require "capistrano/chruby"
-# require "capistrano/bundler"
-# require "capistrano/rails/assets"
+require "capistrano/bundler"
+require "capistrano/rails/assets"
+require 'capistrano/passenger'
+require 'capistrano/rvm'
 # require "capistrano/rails/migrations"
 
-require 'capistrano/rails'
-require 'capistrano/passenger'
+# require 'capistrano/rails'
 
-require 'capistrano/rvm'
 set :rvm_type, :user
 set :rvm_ruby_version, '2.3.0'
 
