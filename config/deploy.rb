@@ -11,7 +11,7 @@ set :deploy_to, '/home/andy/social_avatar'
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 # Change these
-server 'social_avatar', port: 80, roles: [:web, :app, :db], primary: true
+server '35.161.86.36', port: 80, roles: [:web, :app, :db], primary: true
 
 set :application, "social_avatar"
 set :repo_url, "git@github.com:ps-dev/social-avatar.git"
