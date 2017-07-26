@@ -5,7 +5,7 @@ lock "3.8.2"
 set :application, "social_avatar"
 set :repo_url, "git@github.com:ps-dev/social-avatar.git"
 
-set :deploy_to, '/opt/socialavatar'
+# set :deploy_to, '/opt/socialavatar'
 
 # append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
@@ -25,7 +25,7 @@ set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
-set :deploy_to,       '/home/andy/social_avatar'
+set :deploy_to,       '/opt/socialavatar'
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
