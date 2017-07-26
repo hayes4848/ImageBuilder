@@ -247,7 +247,7 @@ DEPENDENCIES
   mini_magick
   paperclip (~> 5.0.0)
   powder
-  puma (~> 3.0)
+  puma (~> 3.8.1)
   rails (~> 5.0.2)
   rails-assets-tether (>= 1.3.3)!
   remotipart (~> 1.2)
