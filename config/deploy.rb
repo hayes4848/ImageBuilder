@@ -16,7 +16,7 @@ server 'socialavatar-stage.pluralsight.com', roles: [:web, :app, :db], primary: 
 set :application, "social_avatar"
 set :repo_url, "git@github.com:ps-dev/social-avatar.git"
 
-set :user,            'andy'
+set :user,            'socialmedia'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
